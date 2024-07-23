@@ -1,0 +1,13 @@
+<ul class="grid gap-8">
+  <li class="p-6 bg-yellow-100 rounded-lg shadow-md" *ngFor="let planet of planets$ | async">
+    <h3 class="text-3xl font-bold underline mb-4">{{ planet.englishName }}</h3>
+    <p><span class="text-xl font-bold">Is Planet:</span> {{ planet.isPlanet ? 'Yes' : 'No' }}</p>
+    
+    <!-- Grid layout for moons -->
+    <ul class="grid grid-cols-3 gap-4 mt-4">
+      <li *ngFor="let moon of planet.moons" class="list-disc ml-6">
+        {{ moon.moon }}
+      </li>
+    </ul>
+  </li>
+</ul>
